@@ -19,10 +19,22 @@ int main()
     scanf("%d", &choice2);
     
     if(choice2 == 1){
-      printf("\n\nAvailable Dates:\n1: August 2, 2019\n2: August 3, 2019
+      printf("\n\nAvailable Dates:\n1: August 2, 2019\n2: August 3, 2019");
+      printf("\nInput date number (1-2): ");
+      scanf("%d", &choice3);
+     
+      if(choice3 == 1){
+        
+      }
+      else if(choice3 == 2){
+        
+      }
     }
-    
+    else if(choice2 == 2){
+      
+    }
   }
+  
   else if(choice1 == 2){
     printf("\n\nAvailable Talent Options: \n1: Daniel Caesar\n2: BLACKPINK");
     printf("\nInput talent number (1-2): ");
@@ -30,6 +42,7 @@ int main()
     
     
   }
+  
   else if(choice1 == 3){
     printf("\n\nAvailable Talent Options: \n1: NCAA\n2: PBA");
     printf("\nInput talent number (1-2): ");
