@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
@@ -11,11 +12,11 @@ int main()
   int qty;
   int price;
   
-  char venue[];
-  char talent[];
-  char date[];
-  char time[];
-  char acc[];
+  char venue[25];
+  char talent[25];
+  char date[25];
+  char time[25];
+  char acc[25];
   
   printf("Venue Options: \n1: Resorts World Manila\n2: Mall of Asia Arena\n3: Araneta Colosseum");
   printf("\nInput venue number (1-3): ");
@@ -38,13 +39,14 @@ int main()
         printf("\nInput time slot number: ");
         scanf("%d", &choice4);
         strcpy(date,"August 2, 2019");
+      }
       else{
         printf("\n\nAvailable Time Slots:\n1: 10:00 AM\n2: 7:00 PM");
         printf("\nInput time slot number: ");
         scanf("%d", &choice4);
         strcpy(date,"August 3, 2019");
       }
-        
+      }
           else{
             printf("\n\nAvailable Seat Choices:\n1: Balcony - PhP 1000\n2: VIP - PhP 2500\n3: VIP Deluxe - PhP 3500");
             printf("\nInput seat choice number: ");
@@ -65,19 +67,18 @@ int main()
             }
           }
       }
-    }
-    
-    else if(choice2 == 2){
+    if(choice2 == 2){
       printf("\n\nAvailable Dates:\n1: July 29, 2019\n2: August 1, 2019");
       printf("\nInput date number (1-2): ");
       scanf("%d", &choice3);
-      talent = "Wicked";
+      strcpy(talent,"Wicked");
       
       if(choice3 == 1){
         printf("\n\nAvailable Time Slots:\n1: 2:00 PM\n2: 8:00 PM");
         printf("\nInput time slot number: ");
         scanf("%d", &choice4);
         strcpy(date,"July 29, 2019");
+      }
       else{
         printf("\n\nAvailable Time Slots:\n1: 2:00 PM\n2: 8:00 PM");
         printf("\nInput time slot number: ");
@@ -189,7 +190,7 @@ int main()
               strcpy(acc,"VIP");  
             }
           }      
-        
+    }
     else if(choice2 == 2){
       printf("\n\nAvailable Dates:\n1: July 1, 2019\n2: July 2, 2019");
       printf("\nInput date number (1-2): ");
@@ -255,7 +256,7 @@ int main()
         scanf("%d", &choice4);
         strcpy(date,"July 16, 2019");
       }
-        
+    }
     if(choice4 == 1){
             printf("\n\nAvailable Seat Choices:\n1: Balcony - PhP 300\n2: Middle Bench - PhP 500\n3: Courtside - PhP 1000");
             printf("\nInput seat choice number: ");
@@ -280,7 +281,7 @@ int main()
             printf("\n\nAvailable Seat Choices:\n1: Balcony - PhP 300\n2: Middle Bench - PhP 500\n3: Courtside - PhP 1000");
             printf("\nInput seat choice number: ");
             scanf("%d", &choice5);
-            time = "11:00 AM";
+            strcpy(time,"11:00 AM");
             
              if(choice5 == 1){
               price = 300;
@@ -295,7 +296,7 @@ int main()
               strcpy(acc,"Courtside");  
             }
           }      
-        
+    } 
     else if(choice2 == 2){
       printf("\n\nAvailable Dates:\n1: July 10, 2019\n2: July 15, 2019");
       printf("\nInput date number (1-2): ");
@@ -314,6 +315,7 @@ int main()
         scanf("%d", &choice4);
         strcpy(date,"July 15, 2019");
       }
+    }
         
     if(choice4 == 1){
            printf("\n\nAvailable Seat Choices:\n1: Balcony - PhP 300\n2: Middle Bench - PhP 500\n3: Courtside - PhP 1000");
@@ -342,12 +344,15 @@ int main()
       printf("\nTalent: %s", talent);
       printf("\nDate: %s", date);
       printf("\nTime: %s", time);
-      printf("\nPrice per ticket: %s", price);
+      printf("\nPrice per ticket: %d", price);
       printf("\nInput quantity of ticket order: ");
-      scanf("%d", qty);
-      choice1 = price*qty;
+      scanf("%d", &qty);
+      choice1 = price * qty;
       printf("\nFinal Price: PhP %d", choice1);
   
 
   return 0;
 }
+    
+    
+
